@@ -24,8 +24,8 @@ library(lubridate)
 
   # Create plot
   with(plot_df_with_datetime, plot(as.POSIXlt(datetime), Sub_metering_1, type="l", ylab="Energy sub metering", xlab=""))
-  with(plot_df_with_datetime, points(as.POSIXlt(datetime), Sub_metering_2, type="l", col="red"))
-  with(plot_df_with_datetime, points(as.POSIXlt(datetime), Sub_metering_3, type="l", col="blue"))
+  with(plot_df_with_datetime, lines(as.POSIXlt(datetime), Sub_metering_2, type="l", col="red"))
+  with(plot_df_with_datetime, lines(as.POSIXlt(datetime), Sub_metering_3, type="l", col="blue"))
 
   #Create legend
   with(plot_df_with_WkDays, legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black", "red", "blue"), lty=1, cex=0.75))
