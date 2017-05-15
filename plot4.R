@@ -37,8 +37,8 @@ plot_df_with_datetime <- mutate(plot_df_with_datetime, datetime = strftime(paste
 
   # create plot in (2,1)
   with(plot_df_with_datetime, plot(as.POSIXlt(datetime), Sub_metering_1, type="l", ylab="Energy sub metering", xlab=""))
-  with(plot_df_with_datetime, points(as.POSIXlt(datetime), Sub_metering_2, type="l", col="red"))
-  with(plot_df_with_datetime, points(as.POSIXlt(datetime), Sub_metering_3, type="l", col="blue"))
+  with(plot_df_with_datetime, lines(as.POSIXlt(datetime), Sub_metering_2, type="l", col="red"))
+  with(plot_df_with_datetime, lines(as.POSIXlt(datetime), Sub_metering_3, type="l", col="blue"))
   with(plot_df_with_datetime, legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c("black", "red", "blue"), bty = "n", lty=1, cex=0.75))
 
   # create plot in (2,2)
